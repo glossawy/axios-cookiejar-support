@@ -1,15 +1,13 @@
 import { configs as sharedConfigs } from '@3846masa/configs/eslint/config.mjs';
-import eslint from '@eslint/js';
-import tseslint from 'typescript-eslint';
+import tslint from 'typescript-eslint';
 
 /** @type {import('typescript-eslint').Config} */
-export default tseslint.config(
-  eslint.configs.recommended,
-  ...tseslint.configs.recommended,
+export default tslint.config(
   {
     ignores: ['dist/**'],
   },
   ...sharedConfigs,
+  tslint.configs.eslintRecommended,
   {
     files: ['examples/**/*'],
     rules: {
